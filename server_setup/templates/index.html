@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='index.css') }}"
+    />
+    <title>Invernadero Automático</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Pantalla de Inicio -->
+      <div class="screen" id="login-screen">
+        <h2 class="screen-title">🌱 Invernadero Automático</h2>
+        <button class="btn" id="login-btn">Ingresar</button>
+      </div>
+
+      <!-- Dashboard Principal -->
+      <div class="screen" id="dashboard-screen" style="display: none">
+        <h2 class="screen-title">📊 Dashboard</h2>
+
+        <div class="status-container">
+          <div class="status-item">
+            <span>🌡️</span>
+            <span>Temp: <span id="temp-value">28</span>°C</span>
+          </div>
+          <div class="status-item">
+            <span>💧</span>
+            <span>Humedad: <span id="humidity-value">67</span>%</span>
+          </div>
+          <div class="status-item">
+            <span>💡</span>
+            <span>Luz: <span id="light-value">Media</span></span>
+          </div>
+          <div class="status-item">
+            <span>🚰</span>
+            <span>Agua: <span id="water-value">Suficiente</span></span>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="mode-selector">
+          <div class="mode-btn" id="manual-mode-btn">Modo Manual</div>
+          <div class="mode-btn active" id="auto-mode-btn">Modo Automático</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div>
+          <span class="status-indicator status-normal"></span>
+          <span>Estado actual: <span id="system-status">Normal</span></span>
+        </div>
+
+        <div class="update-time">
+          Última actualización: <span id="last-update">12</span>s
+        </div>
+      </div>
+
+      <!-- Pantalla de Control Manual -->
+      <div class="screen" id="manual-control-screen" style="display: none">
+        <h2 class="screen-title">⚙️ Control Manual</h2>
+
+        <button class="control-btn" id="water-pump-btn">
+          <span>💧 Bomba de Agua</span>
+          <span id="water-pump-status">Apagada</span>
+        </button>
+
+        <button class="control-btn" id="fan-btn">
+          <span>🌬️ Ventilador</span>
+          <span id="fan-status">Apagado</span>
+        </button>
+
+        <button class="control-btn" id="lights-btn">
+          <span>💡 Luces</span>
+          <span id="lights-status">Apagadas</span>
+        </button>
+
+        <button class="control-btn" id="heat-leds-btn">
+          <span>🔥 LEDs Calor</span>
+          <span id="heat-leds-status">Apagados</span>
+        </button>
+
+        <div class="divider"></div>
+
+        <button class="btn btn-secondary" id="back-to-dashboard-btn">
+          Volver al Dashboard
+        </button>
+      </div>
+
+      <!-- Pantalla de Datos o Consola -->
+      <div class="screen" id="console-screen" style="display: none">
+        <h2 class="screen-title">🖥️ Consola Raspberry</h2>
+
+        <div id="console-log">
+          <div class="log-entry">[12:10] Temp: 29.1°C</div>
+          <div class="log-entry">[12:10] Humedad suelo: 62%</div>
+          <div class="log-entry">[12:10] Agua: OK</div>
+          <div class="log-entry">[12:11] Ventilador activado</div>
+          <div class="log-entry">[12:12] Luz baja - LEDs activos</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <button class="btn btn-secondary" id="back-to-dashboard-btn-2">
+          Volver al Dashboard
+        </button>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
