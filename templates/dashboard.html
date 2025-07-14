@@ -1,0 +1,41 @@
+{% extends "layout.html" %} {% block title %}Dashboard - Invernadero{% endblock
+%} {% block content %}
+<div class="screen" id="dashboard-screen">
+  <h2 class="screen-title">📊 Dashboard</h2>
+
+  <div class="status-container">
+    <div class="status-item">
+      <span>🌡️</span>
+      <span>Temp: <span id="temp-value">28</span>°C</span>
+    </div>
+    <div class="status-item">
+      <span>💧</span>
+      <span>Humedad: <span id="humidity-value">67</span>%</span>
+    </div>
+    <div class="status-item">
+      <span>💡</span>
+      <span>Luz: <span id="light-value">Media</span></span>
+    </div>
+    <div class="status-item">
+      <span>🚰</span>
+      <span>Agua: <span id="water-value">Suficiente</span></span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <button class="btn" id="go-to-manual">Ir a Modo Manual</button>
+  <button class="btn" id="go-to-console">Ver Consola</button>
+
+  <div class="divider"></div>
+
+  <div>
+    <span class="status-indicator status-normal"></span>
+    <span>Estado actual: <span id="system-status">Normal</span></span>
+  </div>
+
+  <div class="update-time">
+    Última actualización: <span id="last-update">12</span>s
+  </div>
+</div>
+{% endblock %}

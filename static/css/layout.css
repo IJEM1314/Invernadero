@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.screen {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: var(--card-shadow);
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.screen-title {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.divider {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 15px 0;
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
+
+  .screen {
+    max-width: none;
+  }
+}

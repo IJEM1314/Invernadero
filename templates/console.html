@@ -1,0 +1,18 @@
+{% extends "layout.html" %} {% block title %}Consola - Invernadero{% endblock %}
+{% block content %}
+<div class="screen" id="dashboard-screen">
+  <h2 class="screen-title">🖥️ Consola Raspberry</h2>
+
+  <div id="console-log">
+    <div class="log-entry">[12:10] Temp: 29.1°C</div>
+    <div class="log-entry">[12:10] Humedad suelo: 62%</div>
+    <div class="log-entry">[12:10] Agua: OK</div>
+    <div class="log-entry">[12:11] Ventilador activado</div>
+    <div class="log-entry">[12:12] Luz baja - LEDs activos</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <button class="btn" id="back-to-dashboard-btn">Volver al Dashboard</button>
+</div>
+{% endblock %}

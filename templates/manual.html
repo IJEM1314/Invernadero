@@ -1,0 +1,30 @@
+{% extends "layout.html" %} {% block title %}Manual - Invernadero{% endblock
+%} {% block content %}
+<div class="screen" id="dashboard-screen">
+  <h2 class="screen-title">⚙️ Control Manual</h2>
+
+  <button class="control-btn" id="water-pump-btn">
+    <span>💧 Bomba de Agua:</span>
+    <span id="water-pump-status">Apagada</span>
+  </button>
+
+  <button class="control-btn" id="fan-btn">
+    <span>🌬️ Ventilador:</span>
+    <span id="fan-status">Apagado</span>
+  </button>
+
+  <button class="control-btn" id="lights-btn">
+    <span>💡 Luces:</span>
+    <span id="lights-status">Apagadas</span>
+  </button>
+
+  <button class="control-btn" id="heat-leds-btn">
+    <span>🔥 LEDs Calor:</span>
+    <span id="heat-leds-status">Apagados</span>
+  </button>
+
+  <div class="divider"></div>
+
+  <button class="btn" id="back-to-dashboard-btn">Volver al Dashboard</button>
+</div>
+{% endblock %}
