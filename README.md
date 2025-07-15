@@ -1,3 +1,3 @@
-# Invernadero Automatico
+# Invernadero Automático
 
 🌱👍
