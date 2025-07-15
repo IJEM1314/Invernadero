@@ -1,23 +1,28 @@
-class GPIO:
+class MockGPIO:
     BCM = "BCM"
     OUT = "OUT"
-    IN = "IN"
     HIGH = True
     LOW = False
 
-    @staticmethod
-    def setmode(mode):
-        print(f"[GPIO] Modo seteado: {mode}")
+    def __init__(self):
+        self.pins = {}
 
-    @staticmethod
-    def setwarnings(flag):
+    def setmode(self, mode):
+        print(f"[GPIO] Modo: {mode}")
+
+    def setwarnings(self, flag):
         print(f"[GPIO] Warnings: {flag}")
 
-    @staticmethod
-    def setup(pin, mode):
-        print(f"[GPIO] Pin {pin} configurado como {mode}")
+    def setup(self, pin, mode):
+        self.pins[pin] = self.LOW
+        print(f"[GPIO] Setup pin {pin} como {mode}")
 
-    @staticmethod
-    def output(pin, value):
-        estado = "ALTO" if value else "BAJO"
-        print(f"[GPIO] Pin {pin} seteado a {estado}")
+    def output(self, pin, state):
+        self.pins[pin] = state
+        print(f"[GPIO] Pin {pin} -> {'HIGH' if state else 'LOW'}")
+
+    def input(self, pin):
+        return self.pins.get(pin, self.LOW)
+
+# Instancia simulada
+GPIO = MockGPIO()
